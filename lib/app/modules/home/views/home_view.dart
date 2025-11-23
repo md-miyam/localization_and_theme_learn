@@ -14,8 +14,10 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
       appBar: AppBar(title: const Text('Localization & Theme'), actions: [
-        IconButton(onPressed: (){}, icon: Icon(Icons.light_mode,color: AppColor.iconColor, ),),
-        IconButton(onPressed: (){Get.toNamed(Routes.SELECT_LANGUAGE);}, icon: Icon(Icons.language,color: AppColor.iconColor, ),),
+        Obx(()=> IconButton(onPressed: (){
+          controller.changeTheme();
+        }, icon: Icon(controller.theme.value ? Icons.light_mode : Icons.dark_mode_outlined ,color: AppColor.iconColor, ),),),
+        IconButton(onPressed: (){Get.toNamed(Routes.SELECT_LANGUAGE);}, icon: Icon(Icons.language,color: AppColor.iconColor, )),
       ],),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
