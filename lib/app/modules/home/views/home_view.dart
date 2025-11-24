@@ -25,8 +25,8 @@ class HomeView extends GetView<HomeController> {
           children: [
             ListTile(
               tileColor: AppColor.primaryColor,
-              title: Text("Country name"),
-              subtitle: Text("Country language"),
+              title: Text("countryName".tr),
+              subtitle: Text("countryLanguage".tr),
             ),
             SizedBox(
               height: 8,
@@ -38,7 +38,7 @@ class HomeView extends GetView<HomeController> {
               decoration: BoxDecoration(
                 color: AppColor.primaryColor,
               ),
-              child: Text("Some text about country.",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+              child: Text("message".tr,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
             ),
           ],
         ),
