@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:localization_and_theme_learn/app/data/app_color.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../data/languages.dart';
 import '../controllers/select_language_controller.dart';
@@ -14,7 +15,7 @@ class SelectLanguageView extends GetView<SelectLanguageController> {
     final localeKeys = languages.keys.keys.toList();
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
-      appBar: AppBar(title: const Text('Language'), centerTitle: true),
+      appBar: AppBar(title: const Text('Language'), surfaceTintColor: Colors.transparent,centerTitle: true),
       body: ListView.builder(
         itemCount: localeKeys.length,
         itemBuilder: (context, index) {

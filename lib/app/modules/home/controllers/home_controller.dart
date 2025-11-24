@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -5,5 +6,10 @@ class HomeController extends GetxController {
 
   void changeTheme (){
     theme.value = !theme.value;
+    if(theme.value == true){
+      Get.changeTheme(ThemeData.light());
+    }else{
+      Get.changeTheme(ThemeData.dark());
+    }
   }
 }
